@@ -52,6 +52,7 @@ This project is a Railway Management System API similar to IRCTC, built using No
    DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DATABASE"
    JWT_SECRET="your_generated_jwt_secret"
    ADMIN_API_KEY="your_generated_admin_api_key"
+   PORT=3000
    ```
 
 4. **Set up the database:**
