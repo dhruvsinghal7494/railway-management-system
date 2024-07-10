@@ -1,7 +1,6 @@
 const prisma = require("../prisma/client");
 
-// Add a new train
-exports.addTrain = async (req, res) => {
+const addTrain = async (req, res) => {
   const { name, source, destination, totalSeats } = req.body;
   try {
     const train = await prisma.train.create({
@@ -19,8 +18,7 @@ exports.addTrain = async (req, res) => {
   }
 };
 
-// Update train details
-exports.updateTrain = async (req, res) => {
+const updateTrain = async (req, res) => {
   const { trainId } = req.params;
   const { name, source, destination, totalSeats } = req.body;
   try {
@@ -38,4 +36,9 @@ exports.updateTrain = async (req, res) => {
   } catch (error) {
     res.status(400).send(error.message);
   }
+};
+
+module.exports = {
+  addTrain,
+  updateTrain,
 };
